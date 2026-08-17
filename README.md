@@ -55,7 +55,7 @@ git clone https://github.com/yufeiyu50-glitch/redmi-K50-to-NAS.git
 cd redmi-K50-to-NAS
 ```
 
-### 获取软件包（大二进制不入库）
+### 获取软件包
 本仓库的 `.gitignore` 已排除 `software/` 目录、`*.apk/*.iso/*.zip` 与 `*.exe`（体积大、均可从网络下载），因此 clone 后这些文件不存在。请二选一获取：
 - 运行下载器：`python download_tools.py`（自动拉取 Alpine ISO / platform-tools / scrcpy / 各 APK 到 `software/`）
 - 或双击运行 `k50_nas_assistant.exe`（若本地已存在），在第 1 步点「下载缺失项」
