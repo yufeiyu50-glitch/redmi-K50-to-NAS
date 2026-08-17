@@ -1,0 +1,18 @@
+# ===== 大二进制 / 下载产物（从网络获取，不入库）=====
+software/
+*.zip
+*.iso
+*.apk
+*.exe
+
+# ===== Python 缓存 / 构建中间产物 =====
+__pycache__/
+*.pyc
+build/
+dist/
+*.spec
+
+# ===== 编辑器 / OS 杂项 =====
+.DS_Store
+Thumbs.db
+*.swp
