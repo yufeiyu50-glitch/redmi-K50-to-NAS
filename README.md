@@ -40,3 +40,24 @@
 ## 说明
 - 本工具只负责「准备 + 引导 + 排错」，真正的 QEMU/Alpine/Docker 部署命令在 Termux 内执行，详细参数见重构方案文档。
 - 所有操作均在 Android 用户态，无需 Root、无需解锁 BL、无需等待 168 小时。
+
+## 克隆与使用
+
+### 从 GitHub 克隆
+```bash
+git clone https://github.com/yufeiyu50-glitch/redmi-K50-to-NAS.git
+cd redmi-K50-to-NAS
+```
+
+### 获取软件包（大二进制不入库）
+本仓库的 `.gitignore` 已排除 `software/` 目录、`*.apk/*.iso/*.zip` 与 `*.exe`（体积大、均可从网络下载），因此 clone 后这些文件不存在。请二选一获取：
+- 运行下载器：`python download_tools.py`（自动拉取 Alpine ISO / platform-tools / scrcpy / 各 APK 到 `software/`）
+- 或双击运行 `k50_nas_assistant.exe`（若本地已存在），在第 1 步点「下载缺失项」
+
+### 运行辅助向导
+- 有 Python 3 + tkinter：直接 `python k50_nas_assistant.py`
+- `k50_nas_assistant.exe` 不在仓库中。如需可执行文件，用 PyInstaller 自行打包：
+  ```bash
+  pyinstaller --onefile --windowed --name k50_nas_assistant k50_nas_assistant.py
+  ```
+  生成的 `dist/k50_nas_assistant.exe` 双击即可运行（**务必用自带 tkinter 的 Python 打包，否则运行会崩溃**）。
